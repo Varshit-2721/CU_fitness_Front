@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878190107913",
+    "project_id": "cufitness-347c4",
+    "storage_bucket": "cufitness-347c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878190107913:android:d497205e4947a473f7c7d8",
+        "android_client_info": {
+          "package_name": "com.example.cu_fitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwHxQup42Xfm38DeaQaeK0_2IZ20AiNLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
