@@ -1,12 +1,9 @@
-import 'package:cu_fitness/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cu_fitness/common_widgets/myButton.dart';
 
-import '../common_widgets/my_elevated_button.dart';
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -113,35 +110,36 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 4),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Forgot password ?',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 13, color: Colors.white),
-                              ),
-                            ],
+                          Text(
+                            'Forgot password?',
+                            style: GoogleFonts.poppins(
+                                fontSize: 13, color: Colors.white),
                           ),
-                          const SizedBox(height: 25),
+                          const SizedBox(height: 30),
                           Center(
-                            child: MyElevatedButton(
-                              buttonText: 'Login',
-                              buttonColor: Colors.blue,
-                              onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return Homepage();
-                                }));
+                            child: ElevatedButton(
+                              onPressed: () {
+                                // Handle login logic here
                               },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 50, vertical: 15),
+                              ),
+                              child: Text(
+                                'Login',
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16, color: Colors.black),
+                              ),
                             ),
                           ),
                           const SizedBox(height: 20),
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Haven\'t registered yet?',
+                              Text('Havent regsitered yet?',
                                   style: GoogleFonts.poppins(
                                       fontSize: 14, color: Colors.white)),
                               const SizedBox(width: 5),
@@ -149,8 +147,6 @@ class LoginScreen extends StatelessWidget {
                                   style: GoogleFonts.poppins(
                                     fontSize: 14,
                                     color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                    decorationColor: Colors.white,
                                   )),
                             ],
                           ),

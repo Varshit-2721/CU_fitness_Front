@@ -1,5 +1,6 @@
 import 'package:cu_fitness/common_widgets/myButton.dart';
 import 'package:cu_fitness/login/login_screen.dart';
+import 'package:cu_fitness/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -68,12 +69,21 @@ class Homepage extends StatelessWidget {
                             MyButton(
                               buttonText: 'Register',
                               width: 100,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) {
+                                  return RegisterScreen();
+                                }));
+                              },
                             ),
                           ],
                         ),
                       ),
                     ),
                   ])),
+//top bar completed
+
+//Body started
               Padding(
                 padding: EdgeInsets.fromLTRB(30, 20, 30, 10),
                 child: Row(
@@ -114,6 +124,12 @@ class Homepage extends StatelessWidget {
                             MyButton(
                               buttonText: 'Get started',
                               width: 130,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) {
+                                  return RegisterScreen();
+                                }));
+                              },
                             ),
                           ],
                         ),
@@ -123,6 +139,7 @@ class Homepage extends StatelessWidget {
                       width: 35,
                     ),
                     Expanded(
+                      // ignore: sized_box_for_whitespace
                       child: Container(
                         height: 700,
                         child: Stack(
@@ -134,7 +151,7 @@ class Homepage extends StatelessWidget {
                             ),
                             Positioned(
                               top: 75,
-                              left: 45,
+                              left: 33,
                               child: Container(
                                   height: 475,
                                   width: 120,
@@ -144,6 +161,7 @@ class Homepage extends StatelessWidget {
                             Positioned(
                               top: 10,
                               right: 1,
+                              // ignore: sized_box_for_whitespace
                               child: Container(
                                   height: 600,
                                   width: 400,
