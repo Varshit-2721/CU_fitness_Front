@@ -4,8 +4,8 @@ import 'package:cu_fitness/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Landingpage extends StatelessWidget {
+  const Landingpage({super.key});
 
   @override
   Widget build(BuildContext context) {

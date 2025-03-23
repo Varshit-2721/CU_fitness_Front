@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cu_fitness/common_widgets/myButton.dart';
 
+import '../LandingPage/landing_page.dart';
+import '../common_widgets/my_elevated_button.dart';
+import '../login/login_screen.dart';
+
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
@@ -39,23 +43,22 @@ class RegisterScreen extends StatelessWidget {
 //top bar completed
             //         const SizedBox(height: 100),
 //body started
-            // Login Form
+            // Register Form
+
             Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.fromLTRB(10, 10, 20, 20),
                 child: Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 150)),
+                    const Padding(padding: EdgeInsets.only(left: 50)),
                     // ignore: sized_box_for_whitespace
                     Container(
                       height: 650,
-                      width: 494,
-                      child: Image.asset("assets/p2.png"),
+                      width: 835,
+                      //color: Colors.white,
+                      child: Image.asset("assets/p3.png"),
                     ),
                     //image container ended
                     // login box started
-                    SizedBox(
-                      width: 200,
-                    ),
                     Container(
                       height: 500,
                       width: 450,
@@ -69,7 +72,7 @@ class RegisterScreen extends StatelessWidget {
                         children: [
                           Center(
                             child: Text(
-                              'Welcome Back !',
+                              'Register to join us...!',
                               style: GoogleFonts.poppins(
                                   fontSize: 30,
                                   color:
@@ -109,45 +112,58 @@ class RegisterScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
-                          const SizedBox(height: 4),
-                          Text(
-                            'Forgot password?',
-                            style: GoogleFonts.poppins(
-                                fontSize: 13, color: Colors.white),
-                          ),
                           const SizedBox(height: 30),
+                          TextField(
+                            obscureText: true,
+                            style: const TextStyle(
+                                color: Color.fromARGB(255, 0, 0, 0)),
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor:
+                                  const Color.fromARGB(255, 255, 255, 255),
+                              hintText: 'Re enter Password',
+                              hintStyle: GoogleFonts.poppins(
+                                  fontSize: 15,
+                                  color: const Color.fromARGB(255, 0, 0, 0)),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                            ),
+                          ),
+                          const SizedBox(height: 25),
                           Center(
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Handle login logic here
+                            child: MyElevatedButton(
+                              buttonText: 'Register',
+                              buttonColor: Colors.blue,
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) {
+                                  return Landingpage();
+                                }));
                               },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 50, vertical: 15),
-                              ),
-                              child: Text(
-                                'Login',
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16, color: Colors.black),
-                              ),
                             ),
                           ),
                           const SizedBox(height: 20),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Havent regsitered yet?',
+                              Text('Already registered ?',
                                   style: GoogleFonts.poppins(
                                       fontSize: 14, color: Colors.white)),
                               const SizedBox(width: 5),
-                              Text('Register',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                  )),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => LoginScreen()));
+                                },
+                                child: Text('Login',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: Colors.white,
+                                    )),
+                              )
                             ],
                           ),
                         ],

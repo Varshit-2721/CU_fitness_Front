@@ -1,9 +1,9 @@
-import 'package:cu_fitness/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cu_fitness/common_widgets/myButton.dart';
-
 import '../common_widgets/my_elevated_button.dart';
+import '../homepage/home_page.dart';
+import '../register/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -131,7 +131,7 @@ class LoginScreen extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context)
                                     .push(MaterialPageRoute(builder: (context) {
-                                  return Homepage();
+                                  return HomePage();
                                 }));
                               },
                             ),
@@ -145,13 +145,19 @@ class LoginScreen extends StatelessWidget {
                                   style: GoogleFonts.poppins(
                                       fontSize: 14, color: Colors.white)),
                               const SizedBox(width: 5),
-                              Text('Register',
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                    decorationColor: Colors.white,
-                                  )),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => RegisterScreen()));
+                                },
+                                child: Text('Register',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      color: Colors.white,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: Colors.white,
+                                    )),
+                              ),
                             ],
                           ),
                         ],
