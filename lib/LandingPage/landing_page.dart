@@ -1,8 +1,13 @@
+import 'package:cu_fitness/chatbot/chatbot.dart';
 import 'package:cu_fitness/common_widgets/myButton.dart';
+import 'package:cu_fitness/homepage/home_page.dart';
+// import 'package:cu_fitness/homepage/home_page.dart';
 import 'package:cu_fitness/login/login_screen.dart';
-import 'package:cu_fitness/register/register_screen.dart';
+import 'package:cu_fitness/register/register_screen_1.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+//import '../profile_page/profile_page.dart';
 
 class Landingpage extends StatelessWidget {
   const Landingpage({super.key});
@@ -72,7 +77,7 @@ class Landingpage extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context)
                                     .push(MaterialPageRoute(builder: (context) {
-                                  return RegisterScreen();
+                                  return RegisterScreen1();
                                 }));
                               },
                             ),
@@ -127,7 +132,7 @@ class Landingpage extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context)
                                     .push(MaterialPageRoute(builder: (context) {
-                                  return RegisterScreen();
+                                  return HomePage();
                                 }));
                               },
                             ),
